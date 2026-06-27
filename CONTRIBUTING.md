@@ -38,17 +38,17 @@ Your `wiki/log.md` must contain at least one verified session entry (signed off 
 ## Submission Process
 
 1. **Fork** your lab wiki repository on GitHub
-2. **Copy** your `wiki/pages/` folder into `submissions/<YourName>/`
+2. **Copy** your `wiki/pages/` folder into `submissions/<ProjectName>/`
 3. **Copy** your `wiki/primary.bib` and `wiki/secondary.bib` into the same folder
 4. **Copy** your `wiki/log.md` into the same folder
-5. **Open a Pull Request** with the title: `Submission: <Name> — <brief topic description>`
+5. **Open a Pull Request** with the title: `Submission: <ProjectName> — <brief topic description>`
 6. **Complete the PR checklist** (appears automatically from `.github/PULL_REQUEST_TEMPLATE.md`)
 
 ---
 
 ## PR Checklist
 
-The following is checked automatically by CI and must also be confirmed by you:
+The following is checked automatically by the lab wiki's CI and must also be confirmed by you:
 
 - [ ] All pages pass structural validation (`validate.py` exits with code 0)
 - [ ] All pages have complete YAML frontmatter (no `<!-- MISSING -->` fields)
@@ -62,7 +62,7 @@ The following is checked automatically by CI and must also be confirmed by you:
 ## What Happens After Submission
 
 1. CI runs the hub's validation and merge scripts automatically. Structural errors block the PR
-2. A community reviewer (rotating maintainer) reviews the merge report and spot-checks a sample of claims
+2. A lab wiki maintainer reviews the merge report and spot-checks a sample of claims
 3. The agent synthesizes your pages into the lab wiki on a branch
 4. The reviewer approves the branch and merges
 
@@ -70,15 +70,17 @@ Turnaround target: 2 weeks. You will be tagged on the PR if clarification is nee
 
 ---
 
-## Confidence Levels in the Community Wiki
+## Confidence Levels in the Lab Wiki
 
-Community confidence is more conservative than project-level confidence:
+The lab wiki inherits confidence levels directly from the submitting project wiki. A claim that is `established` in your project wiki remains `established` in the lab wiki.
 
-| Community level | Requires |
-|-----------------|----------|
-| `established` | Two or more independent lab submissions supporting the same claim |
-| `debated` | Conflicting claims across submissions, or one submission with debated status |
-| `speculative` | Single submission, or thin evidence noted in source project |
+The only reason to change confidence during a merge is a genuine conflict between projects:
+
+| Situation | Lab wiki confidence |
+|-----------|---------------------|
+| Single project submission | Inherited as-is |
+| Multiple projects agree | Highest level supported across them |
+| Multiple projects conflict | Downgraded to `debated`; conflict flagged for human review |
 
 Your submission will not be rejected for having `speculative` pages. The lab wiki explicitly tracks the state of knowledge including what is uncertain.
 
@@ -87,8 +89,8 @@ Your submission will not be rejected for having `speculative` pages. The lab wik
 ## Questions and Corrections
 
 Open a GitHub Issue for:
-- Factual errors you find in community pages
-- Requests to add your lab as a maintainer
+- Factual errors you find in lab wiki pages
+- Requests to become a maintainer
 - Questions about the submission process
 
-Do not edit community pages directly — all updates flow through project wiki submissions.
+Do not edit lab wiki pages directly — all updates flow through project wiki submissions.

@@ -38,7 +38,7 @@ neurowiki/                     ← this template repo
 ├── README.md                  ← this file
 ├── docs/index.html            ← GitHub Pages landing page
 ├── .github/workflows/
-│   └── validate.yml           ← CI checks for community submissions
+│   └── validate.yml           ← CI: validates wiki structure on push
 └── wiki/                      ← project wiki (empty; populated by agent)
     ├── primary.bib
     ├── secondary.bib
