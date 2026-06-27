@@ -111,7 +111,7 @@ No wiki content should be used for modeling decisions or manuscript writing unti
 
 ---
 
-## Tips for PhD Students
+## Tips for Users
 
 - **Drop PDFs into `raw/` and run ingestion.** Don't manually summarize papers into wiki pages.
 - **There are no per-paper pages.** Look for the concept (`REG_v1-layer4`, `PHE_orientation-tuning`) — the synthesis is there with citations.
