@@ -62,6 +62,10 @@ updated: $(date +%Y-%m-%d)
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
+## Theories
+| Page | Title | Status | Updated |
+|------|-------|--------|---------|
+
 ## Brain Regions & Cell Types
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|

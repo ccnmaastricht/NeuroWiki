@@ -24,10 +24,11 @@ If a required section is missing, add a stub — never invented text.
 |------|-----------------------------|
 | All pages | `type`, `title`, `updated` |
 | PHE_, MOD_, REG_ | + `confidence` |
+| THE_ | + `status` |
 | MOD_ | + `subtype` |
 | All pages | `related` (list; empty list `[]` acceptable if no links yet) |
 
-Valid `type` values: `phenomenon`, `model`, `region`, `paradigm`, `index`
+Valid `type` values: `phenomenon`, `model`, `theory`, `region`, `paradigm`, `index`
 
 ### Section order by page type
 
@@ -35,6 +36,7 @@ Valid `type` values: `phenomenon`, `model`, `region`, `paradigm`, `index`
 |------|-----------------------------|
 | PHE_ | Description · Empirical Basis · Key Parameters and Quantitative Signatures · Generality · Controversies · Modeling Implications |
 | MOD_ | Description · Formal Description · Core Assumptions · Empirical Support · Empirical Challenges · Comparison to Alternatives · Controversies · Usage in the Literature |
+| THE_ | Core Claims · Explanatory Schema · Model Family · Mechanistic Grounding · Empirical Scope · Controversies · Key Sources |
 | REG_ | Anatomical Identity · Physiology · Connectivity · Functional Role(s) · Controversies · Modeling Considerations |
 | PAR_ | Description · What It Measures / Reveals · Standard Variants · Limitations and Confounds · Key Studies and Datasets · Relevance to This Project |
 

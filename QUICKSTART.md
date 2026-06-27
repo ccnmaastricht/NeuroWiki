@@ -60,7 +60,7 @@ Read AGENT.md fully.
 I need to justify our choice of [MODEL/METHOD].
 Summarize the empirical support, core assumptions and biological basis,
 and how it compares to [ALTERNATIVE].
-Draw from MOD_, PHE_, and REG_ pages. Do not process any new PDFs.
+Draw from MOD_, PHE_, THE_, and REG_ pages. Do not process any new PDFs.
 ```
 
 ### Wiki overview

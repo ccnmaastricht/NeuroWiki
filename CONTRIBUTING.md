@@ -6,7 +6,7 @@ NeuroWiki Commons is a community-maintained, citation-grounded knowledge base fo
 
 ## What You Are Contributing
 
-You are submitting a project-level wiki — a folder of structured markdown pages covering phenomena, models, brain regions, and experimental paradigms relevant to your research. Your pages will be synthesized into the community wiki, enriching shared pages where your evidence overlaps with existing content and creating new pages where it does not.
+You are submitting a project-level wiki — a folder of structured markdown pages covering phenomena, models, theories, brain regions, and experimental paradigms relevant to your research. Your pages will be synthesized into the community wiki, enriching shared pages where your evidence overlaps with existing content and creating new pages where it does not.
 
 Your original citation keys are preserved. Your lab is credited in the `provenance` field of every page you contribute to.
 
