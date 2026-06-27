@@ -14,6 +14,10 @@ updated: YYYY-MM-DD
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
+## Theories
+| Page | Title | Status | Updated |
+|------|-------|------------|---------|
+
 ## Brain Regions & Cell Types
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
