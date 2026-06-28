@@ -39,7 +39,6 @@ neurowiki/                     ← this template repo
 │   └── index.html             ← GitHub Pages landing page
 ├── scripts/                   ← tools
 │   ├── validate.py            ← local pre-submission structural validation
-│   ├── merge.py               ← lab wiki merge helper
 │   └── setup.sh               ← one-command project initialization
 ├── .github/workflows/
 │   └── validate.yml           ← CI: validates wiki structure on push
