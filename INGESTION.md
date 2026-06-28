@@ -14,7 +14,7 @@ Print the session summary when done.
 ## Rules
 
 - Process one PDF at a time. Complete all steps before starting the next.
-- The structured abstract constructed in Step 2 is a processing tool only. It is not stored.
+- The structured abstract constructed in Step 2 is a processing tool only. Do not output it to the conversation; it is not stored.
 - Never modify files in `raw/`.
 
 ---
