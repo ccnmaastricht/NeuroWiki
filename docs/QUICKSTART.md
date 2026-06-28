@@ -82,7 +82,7 @@ the research question in Section 1. Do not process any new PDFs.
 
 Create one copy of this template per project or research line.
 
-1. On GitHub, click **Use this template → Create a new repository** on the [NeuroWiki template repo](https://github.com/ccnmaastricht/NeuroWiki), then clone your new repo
+1. On GitHub, click **Use this template → Create a new repository** on the [NeuroWiki template repo](https://github.com/ccnmaastricht/NeuroWiki-Project), then clone your new repo
 2. Open `agent/AGENT.md` and complete every field marked with a blank in Section 1.
 3. Run the setup script:
    ```bash

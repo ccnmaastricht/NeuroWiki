@@ -4,7 +4,7 @@
 
 NeuroWiki is a modular LLM-agent system for building and maintaining citation-grounded knowledge bases in neuroscience. Papers go in; structured, synthesized, cross-linked wiki pages come out.
 
-**[neurowiki.github.io](https://neurowiki.github.io)** · **[Example project wiki](https://github.com/MSenden/Example-Wiki)**
+**[ccnmaastricht.github.io/NeuroWiki-Project](https://ccnmaastricht.github.io/NeuroWiki-Project)** · **[Example project wiki](https://github.com/ccnmaastricht/NeuroWiki-ProjectExample)**
 
 ---
 
@@ -68,7 +68,7 @@ bash scripts/setup.sh "My Project Name"
 ```
 
 See **[QUICKSTART.md](docs/QUICKSTART.md)** for session invocation prompts and usage patterns.
-See the **[example project wiki](https://github.com/MSenden/Example-Wiki)** for a populated wiki showing real pages, session logs, and refinement reports.
+See the **[example project wiki](https://github.com/ccnmaastricht/NeuroWiki-ProjectExample)** for a populated wiki showing real pages, session logs, and refinement reports.
 
 ## Agent compatibility
 
