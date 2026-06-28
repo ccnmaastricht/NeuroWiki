@@ -32,7 +32,7 @@ jobs:
       - name: Run structural validation
         if: steps.check.outputs.page_count != '0'
         run: |
-          python3 validate.py \
+          python3 scripts/validate.py \
             --source wiki/ \
             --skip-log \
             --report validation-report.json

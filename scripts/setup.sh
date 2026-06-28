@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # NeuroWiki project setup script
-# Usage: bash setup.sh "My Project Name"
+# Usage: bash scripts/setup.sh "My Project Name"
 # Run this once in the root of a new project folder.
 
 set -e
@@ -16,10 +16,10 @@ mkdir -p raw wiki/pages
 grep -q "^raw/$" .gitignore 2>/dev/null || echo "raw/" >> .gitignore
 echo "raw/ excluded from git tracking (via .gitignore)"
 
-# Propagate project name into AGENT.md
-if grep -q "^Project name:" AGENT.md 2>/dev/null; then
-    sed -i "s|^Project name:.*|Project name:             ${PROJECT_NAME}|" AGENT.md
-    echo "AGENT.md project name set to: $PROJECT_NAME"
+# Propagate project name into agent/AGENT.md
+if grep -q "^Project name:" agent/AGENT.md 2>/dev/null; then
+    sed -i "s|^Project name:.*|Project name:             ${PROJECT_NAME}|" agent/AGENT.md
+    echo "agent/AGENT.md project name set to: $PROJECT_NAME"
 fi
 
 # Initialize wiki files
@@ -38,7 +38,7 @@ cat > wiki/log.md << 'LOGEOF'
 # Session Log
 
 One entry per agent session. Each entry signed off by a lab member after verification.
-See VERIFICATION.md for the verification protocol.
+See docs/VERIFICATION.md for the verification protocol.
 
 ---
 LOGEOF
@@ -57,7 +57,11 @@ updated: $(date +%Y-%m-%d)
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
-## Models & Methods
+## Models
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Methods & Analysis
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
@@ -76,9 +80,9 @@ INDEXEOF
 
 echo ""
 echo "Done. Next steps:"
-echo "  1. Open AGENT.md and complete the remaining fields in Section 1 (research question, brain regions, theories, etc.)"
+echo "  1. Open agent/AGENT.md and complete the remaining fields in Section 1 (research question, brain regions, theories, etc.)"
 echo "  2. Add PDFs to raw/ (never committed to git — excluded via .gitignore)"
-echo "  3. Start an ingestion session using a prompt from QUICKSTART.md"
+echo "  3. Start an ingestion session using a prompt from docs/QUICKSTART.md"
 echo ""
 echo "Folder structure created:"
 find wiki raw -type f | sort

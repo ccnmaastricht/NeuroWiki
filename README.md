@@ -21,22 +21,26 @@ NeuroWiki is a modular LLM-agent system for building and maintaining citation-gr
 
 ```
 neurowiki/                     ← this template repo
-├── AGENT.md                   ← master agent file; read every session
-├── INGESTION.md               ← workflow: processing new PDFs
-├── REFINE_A.md                ← workflow: structural harmonization
-├── REFINE_B.md                ← workflow: depth audit
-├── REFINE_C.md                ← workflow: cross-link audit
-├── validate.py                ← script: local pre-submission structural validation
-├── setup.sh                   ← one-command project initialization
-├── CLAUDE.md                  ← Claude Code bootstrap → reads AGENT.md
-├── GEMINI.md                  ← Gemini CLI bootstrap → reads AGENT.md
-├── CURSOR.md                  ← Cursor bootstrap → reads AGENT.md
-├── AGENTS.md                  ← OpenAI Codex bootstrap → reads AGENT.md
-├── CONTRIBUTING.md            ← lab wiki submission guide
-├── VERIFICATION.md            ← human verification protocol
-├── QUICKSTART.md              ← setup guide and session invocation prompts
 ├── README.md                  ← this file
-├── docs/index.html            ← GitHub Pages landing page
+├── CLAUDE.md                  ← Claude Code bootstrap → reads agent/AGENT.md
+├── GEMINI.md                  ← Gemini CLI bootstrap → reads agent/AGENT.md
+├── CURSOR.md                  ← Cursor bootstrap → reads agent/AGENT.md
+├── AGENTS.md                  ← OpenAI Codex bootstrap → reads agent/AGENT.md
+├── agent/                     ← agent instruction files
+│   ├── AGENT.md               ← master agent file; read every session
+│   ├── INGESTION.md           ← workflow: processing new PDFs
+│   ├── REFINE_A.md            ← workflow: structural harmonization
+│   ├── REFINE_B.md            ← workflow: depth audit
+│   └── REFINE_C.md            ← workflow: cross-link audit
+├── docs/                      ← human-facing documentation
+│   ├── QUICKSTART.md          ← setup guide and session invocation prompts
+│   ├── VERIFICATION.md        ← human verification protocol
+│   ├── CONTRIBUTING.md        ← lab wiki submission guide
+│   └── index.html             ← GitHub Pages landing page
+├── scripts/                   ← tools
+│   ├── validate.py            ← local pre-submission structural validation
+│   ├── merge.py               ← lab wiki merge helper
+│   └── setup.sh               ← one-command project initialization
 ├── .github/workflows/
 │   └── validate.yml           ← CI: validates wiki structure on push
 └── wiki/                      ← project wiki (empty; populated by agent)
@@ -55,17 +59,17 @@ git clone https://github.com/<you>/<your-project>
 cd <your-project>
 
 # 2. Initialize the wiki folder structure
-bash setup.sh "My Project Name"
+bash scripts/setup.sh "My Project Name"
 
 # 3. Fill in your project details
-# Open AGENT.md and complete Section 1
+# Open agent/AGENT.md and complete Section 1
 
 # 4. Add papers and start your first ingestion session
 # Drop PDFs into raw/, then use a prompt from QUICKSTART.md
 ```
 
-See **[QUICKSTART.md](QUICKSTART.md)** for session invocation prompts and usage patterns.
-See the **[example project wiki](https://github.com/neurowiki/example-hippocampus)** for a populated wiki showing real pages, session logs, and refinement reports.
+See **[QUICKSTART.md](docs/QUICKSTART.md)** for session invocation prompts and usage patterns.
+See the **[example project wiki](https://github.com/MSenden/Example-Wiki)** for a populated wiki showing real pages, session logs, and refinement reports.
 
 ## Agent compatibility
 
@@ -89,7 +93,7 @@ Lab wiki     ← lab level (separate repo; merges project wikis across a lab)
 NeuroWiki    ← project level (this repo)
 ```
 
-When a project wiki is ready to share, it can be submitted to a lab wiki repository via pull request using the fork-copy-PR workflow described in **[CONTRIBUTING.md](CONTRIBUTING.md)**. The lab wiki merges contributions from all projects within a lab into a unified synthesis.
+When a project wiki is ready to share, it can be submitted to a lab wiki repository via pull request using the fork-copy-PR workflow described in **[CONTRIBUTING.md](docs/CONTRIBUTING.md)**. The lab wiki merges contributions from all projects within a lab into a unified synthesis.
 
 ## Legal notice
 
@@ -112,7 +116,7 @@ NeuroWiki uses a dual license reflecting the two distinct layers of the project:
 
 | Layer | License |
 |-------|---------|
-| Infrastructure files (AGENT.md, INGESTION.md, REFINE_*.md, validate.py, setup.sh, etc.) | Apache 2.0 with template exception |
+| Infrastructure files (agent/AGENT.md, agent/INGESTION.md, agent/REFINE_*.md, scripts/validate.py, scripts/setup.sh, etc.) | Apache 2.0 with template exception |
 | Wiki content (wiki/pages/, wiki/index.md, wiki/log.md, .bib files) | CC BY 4.0 |
 
 **The template exception** means that using NeuroWiki to build a project wiki does not make your wiki a Derivative Work of NeuroWiki. Your wiki content is entirely your own — you may license it however you choose. The Apache 2.0 terms only apply if you distribute modified versions of the infrastructure files themselves.

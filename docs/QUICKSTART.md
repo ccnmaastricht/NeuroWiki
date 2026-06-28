@@ -8,15 +8,15 @@ Copy the relevant prompt and paste it at the start of an agent session.
 
 ### Ingestion — single PDF
 ```
-Read AGENT.md fully, then read INGESTION.md fully.
-Process the following PDF, following the workflow in INGESTION.md exactly:
+Read agent/AGENT.md fully, then read agent/INGESTION.md fully.
+Process the following PDF, following the workflow in agent/INGESTION.md exactly:
 - raw/<filename>.pdf
 Print the session summary when done.
 ```
 
 ### Ingestion — batch
 ```
-Read AGENT.md fully, then read INGESTION.md fully.
+Read agent/AGENT.md fully, then read agent/INGESTION.md fully.
 Process the following PDFs one at a time, completing all steps before moving to the next:
 - raw/paper1.pdf
 - raw/paper2.pdf
@@ -25,7 +25,7 @@ Print a combined session summary when done.
 ```
 
 ```
-Read AGENT.md fully, then read INGESTION.md fully.
+Read agent/AGENT.md fully, then read agent/INGESTION.md fully.
 Process all PDFs in raw/ one at a time, completing all steps before moving to the next.
 Print a combined session summary when done.
 ```
@@ -34,23 +34,23 @@ Print a combined session summary when done.
 
 ### Refinement A — Structural harmonization
 ```
-Read AGENT.md fully, then read REFINE_A.md fully.
+Read agent/AGENT.md fully, then read agent/REFINE_A.md fully.
 Run Structural Harmonization across all pages in wiki/pages/ and wiki/index.md.
-Follow REFINE_A.md exactly. Print the session summary when done.
+Follow agent/REFINE_A.md exactly. Print the session summary when done.
 ```
 
 ### Refinement B — Depth audit
 ```
-Read AGENT.md fully, then read REFINE_B.md fully.
+Read agent/AGENT.md fully, then read agent/REFINE_B.md fully.
 Run the Depth Audit across all pages in wiki/pages/.
-Follow REFINE_B.md exactly. Save the report and print the session summary when done.
+Follow agent/REFINE_B.md exactly. Save the report and print the session summary when done.
 ```
 
 ### Refinement C — Cross-link audit
 ```
-Read AGENT.md fully, then read REFINE_C.md fully.
+Read agent/AGENT.md fully, then read agent/REFINE_C.md fully.
 Run the Cross-Link Audit across all pages in wiki/pages/ and wiki/index.md.
-Follow REFINE_C.md exactly. Print the session summary when done.
+Follow agent/REFINE_C.md exactly. Print the session summary when done.
 ```
 
 ### Writing assistance — background / introduction
@@ -83,10 +83,10 @@ the research question in Section 1. Do not process any new PDFs.
 Create one copy of this template per project or research line.
 
 1. On GitHub, click **Use this template → Create a new repository** on the [NeuroWiki template repo](https://github.com/ccnmaastricht/NeuroWiki), then clone your new repo
-2. Open `AGENT.md` and complete every field marked with a blank in Section 1.
+2. Open `agent/AGENT.md` and complete every field marked with a blank in Section 1.
 3. Run the setup script:
    ```bash
-   bash setup.sh "My Project Name"
+   bash scripts/setup.sh "My Project Name"
    ```
 4. Add PDFs to `raw/` and run your first ingestion session
 
@@ -107,8 +107,8 @@ Create one copy of this template per project or research line.
 ## After Every Session
 
 1. Read the agent's session summary
-2. Complete the VERIFICATION.md post-session checklist
-3. Add a signed entry to `wiki/log.md`
+2. Complete the `docs/VERIFICATION.md` post-session checklist
+3. Replace `**Sign-off**: *(pending)*` in `wiki/log.md` with `**Sign-off**: ✓ Verified — <name>, <date>`
 
 No wiki content should be used for methodological decisions or manuscript writing until the session checklist is signed off.
 
@@ -122,4 +122,4 @@ No wiki content should be used for methodological decisions or manuscript writin
 - **`†` means unverified against source.** If it matters for your work, add the PDF and run ingestion to promote it.
 - **Don't edit pages manually** unless correcting a clear factual error. Add `<!-- QUERY: <concern> -->` and address it in the next agent session so the correction is sourced.
 - **Check `wiki/index.md` first** before asking the agent to create a new page. The concept may already exist under a different slug.
-- **Read VERIFICATION.md** before signing off on any session. Your sign-off is a meaningful attestation.
+- **Read `docs/VERIFICATION.md`** before signing off on any session. Your sign-off is a meaningful attestation.
