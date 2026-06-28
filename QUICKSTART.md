@@ -82,7 +82,7 @@ the research question in Section 1. Do not process any new PDFs.
 
 Create one copy of this template per project or research line.
 
-1. On GitHub, click **Use this template → Create a new repository** on the [NeuroWiki template repo](https://github.com/neurowiki/neurowiki), then clone your new repo
+1. On GitHub, click **Use this template → Create a new repository** on the [NeuroWiki template repo](https://github.com/ccnmaastricht/NeuroWiki), then clone your new repo
 2. Open `AGENT.md` and complete every field marked with a blank in Section 1.
 3. Run the setup script:
    ```bash
@@ -96,7 +96,7 @@ Create one copy of this template per project or research line.
 
 | Trigger | Run |
 |---------|-----|
-| After every 5–10 PDFs ingested | REFINE_C |
+| After every 5–10 PDFs ingested | REFINE_A + REFINE_C |
 | Monthly | REFINE_B |
 | Before an empirical/modeling phase or manuscript | REFINE_A then REFINE_B |
 | When a new contributor joins | REFINE_A |
