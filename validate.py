@@ -17,7 +17,7 @@ from pathlib import Path
 from datetime import date
 
 
-CONFIDENCE_TYPES = {"phenomenon", "model", "region"}
+CONFIDENCE_TYPES = {"phenomenon", "model", "method", "region"}
 VALID_CONFIDENCE = {"established", "debated", "speculative"}
 STATUS_TYPES = {"theory"}
 VALID_STATUS = {"active-research-area", "settled", "abandoned"}

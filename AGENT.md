@@ -56,7 +56,8 @@ There are no per-paper pages. Papers are sources synthesized into concept pages.
 | Prefix | Type | Covers |
 |--------|------|--------|
 | `PHE_` | Phenomenon / empirical finding | An observed neural or behavioral regularity |
-| `MOD_` | Model or method | A computational model, analysis method, or algorithm |
+| `MOD_` | Model | A computational or mathematical model that represents a target system and makes claims about it |
+| `MET_` | Method | An analysis method, algorithm, or empirical technique that operates on data to extract or transform information |
 | `THE_` | Neuroscientific theory | A full theory that provides explanatory schema for models and has explanatory scope over phenomena |
 | `REG_` | Brain region or cell type | Anatomy, physiology, connectivity of a region or cell class |
 | `PAR_` | Experimental paradigm or dataset | A task, recording protocol, or canonical dataset |
@@ -180,7 +181,7 @@ Link to [[MOD_...]] pages.>
 ---
 type: model
 title: <full human-readable name>
-subtype: mechanistic | normative | data-driven | behavioral | analysis-method
+subtype: mechanistic | normative | data-driven | behavioral
 explanatory_role: how-possibly | how-actually | phenomenological
 confidence: established | debated | speculative
 updated: YYYY-MM-DD
@@ -389,6 +390,53 @@ What phenomena has it been used to characterize? (@Key)>
 
 ---
 
+### 6.6 MET_ — Analysis Method or Algorithm
+
+```markdown
+---
+type: method
+title: <full human-readable name>
+subtype: analysis | preprocessing | decoding | statistical
+confidence: established | debated | speculative
+updated: YYYY-MM-DD
+related:
+  - PHE_<slug>
+  - MOD_<slug>
+  - PAR_<slug>
+tags: []
+---
+
+# <Method name>
+
+## Description
+
+<What does this method do? What input does it take and what output does it produce?>
+
+## Key Assumptions
+
+<What must be true of the data for the method to be valid?
+What does it assume about the signal, noise, stationarity, or independence of observations?>
+
+## Known Artifacts and Limitations
+
+<What systematic biases or distortions does it introduce?
+Under what conditions does it fail or produce misleading results? (@Key)>
+
+## Standard Variants
+
+<Common algorithmic or protocol variants and what they emphasize differently.>
+
+## Software Implementations
+
+<Key tools, packages, or reference implementations.>
+
+## Usage in the Literature
+
+<How has this been applied in neuroscience? What has it been used to measure or reveal? (@Key)>
+```
+
+---
+
 ## 7. wiki/index.md Structure
 
 `wiki/index.md` is the agent's navigation entry point for the entire wiki. It must be kept current by every workflow that creates or modifies pages. The agent reads this file first when navigating the wiki, then follows links to relevant pages rather than scanning the full `pages/` directory.
@@ -407,7 +455,11 @@ updated: YYYY-MM-DD
 |------|-------|------------|---------|
 | [PHE_place-cell-remapping](pages/PHE_place-cell-remapping.md) | Place cell remapping | established | 2025-03-10 |
 
-## Models & Methods
+## Models
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Methods & Analysis
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
