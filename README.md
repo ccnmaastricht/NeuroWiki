@@ -1,4 +1,4 @@
-# NeuroWiki
+# NeuroWiki-Project
 
 **This is a GitHub template repository.** Create one copy per project or research line. Click **Use this template** on GitHub, then follow the Quickstart below.
 
