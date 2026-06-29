@@ -10,7 +10,7 @@ NeuroWiki is a modular LLM-agent system for building and maintaining citation-gr
 
 ## What it does
 
-- Reads PDFs and synthesizes their content into concept pages (phenomena, models, theories, brain regions, paradigms)
+- Reads PDFs and synthesizes their content into concept pages (phenomena, models, theories, brain regions, cell types, circuits, paradigms, methods, datasets)
 - Tracks citation provenance with a two-tier system: `(@Key)` for verified primary sources, `(@Key†)` for reconstructed secondary citations
 - Surfaces conflicts between papers for human review rather than silently resolving them
 - Maintains confidence levels (`established` / `debated` / `speculative`) on every page
@@ -22,10 +22,10 @@ NeuroWiki is a modular LLM-agent system for building and maintaining citation-gr
 ```
 neurowiki/                     ← this template repo
 ├── README.md                  ← this file
-├── CLAUDE.md                  ← Claude Code bootstrap → reads agent/AGENT.md
-├── GEMINI.md                  ← Gemini CLI bootstrap → reads agent/AGENT.md
-├── CURSOR.md                  ← Cursor bootstrap → reads agent/AGENT.md
-├── AGENTS.md                  ← OpenAI Codex bootstrap → reads agent/AGENT.md
+├── CLAUDE.md                  ← Claude Code bootstrap (auto-read on launch)
+├── GEMINI.md                  ← Gemini CLI bootstrap (auto-read on launch)
+├── CURSOR.md                  ← Cursor bootstrap (auto-read on launch)
+├── AGENTS.md                  ← OpenAI Codex bootstrap (auto-read on launch)
 ├── agent/                     ← agent instruction files
 │   ├── TEMPLATES.md           ← page templates, conflict resolution, citation rules
 │   ├── INGESTION.md           ← workflow: processing new PDFs
@@ -70,7 +70,7 @@ See the **[example project wiki](https://github.com/ccnmaastricht/NeuroWiki-Proj
 
 ## Agent compatibility
 
-NeuroWiki works with any LLM agent. Bootstrap files auto-load `AGENT.md` on launch for supported agents:
+NeuroWiki works with any LLM agent. Bootstrap files are auto-read on launch for supported agents:
 
 | Agent | Bootstrap file |
 |-------|---------------|
@@ -113,7 +113,7 @@ NeuroWiki uses a dual license reflecting the two distinct layers of the project:
 
 | Layer | License |
 |-------|---------|
-| Infrastructure files (agent/AGENT.md, agent/INGESTION.md, agent/REFINE_*.md, scripts/validate.py, scripts/setup.sh, etc.) | Apache 2.0 with template exception |
+| Infrastructure files (agent/INGESTION.md, agent/TEMPLATES.md, agent/REFINE_*.md, scripts/validate.py, scripts/setup.sh, etc.) | Apache 2.0 with template exception |
 | Wiki content (wiki/pages/, wiki/index.md, wiki/log.md, .bib files) | CC BY 4.0 |
 
 **The template exception** means that using NeuroWiki to build a project wiki does not make your wiki a Derivative Work of NeuroWiki. Your wiki content is entirely your own — you may license it however you choose. The Apache 2.0 terms only apply if you distribute modified versions of the infrastructure files themselves.

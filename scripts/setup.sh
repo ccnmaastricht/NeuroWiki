@@ -127,11 +127,7 @@ updated: $(date +%Y-%m-%d)
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
-## Models
-| Page | Title | Confidence | Updated |
-|------|-------|------------|---------|
-
-## Methods & Analysis
+## Computational Models
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
@@ -139,11 +135,31 @@ updated: $(date +%Y-%m-%d)
 | Page | Title | Status | Updated |
 |------|-------|--------|---------|
 
-## Brain Regions & Cell Types
+## Brain Regions
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
-## Paradigms & Datasets
+## Cell Types
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Neural Circuits & Networks
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Experimental Paradigms
+| Page | Title | Updated |
+|------|-------|---------|
+
+## Technical Methods
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Analysis Methods
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Canonical Datasets
 | Page | Title | Updated |
 |------|-------|---------|
 INDEXEOF

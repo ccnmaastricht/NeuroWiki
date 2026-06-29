@@ -63,15 +63,19 @@ There are no per-paper pages. Papers are sources synthesized into concept pages.
 
 | Prefix | Type | Covers |
 |--------|------|--------|
-| `PHE_` | Phenomenon / empirical finding | An observed neural or behavioral regularity |
-| `MOD_` | Model | A computational or mathematical model that represents a target system and makes claims about it |
-| `MET_` | Method | An analysis method, algorithm, or empirical technique that operates on data to extract or transform information |
-| `THE_` | Neuroscientific theory | A full theory that provides explanatory schema for models and has explanatory scope over phenomena |
-| `REG_` | Brain region or cell type | Anatomy, physiology, connectivity of a region or cell class |
-| `PAR_` | Experimental paradigm or dataset | A task, recording protocol, or canonical dataset |
+| `PHE_` | Phenomenon | An observed neural or behavioral regularity at any level, including functional network patterns |
+| `MOD_` | Computational model | A formal model (mechanistic, normative, or data-driven) making specific, testable claims about a target system |
+| `THE_` | Neuroscientific theory | A full theory with explanatory schema, a defined model family, mechanistic grounding, and explicit empirical scope; umbrella theories link to sub-theory THE_ pages |
+| `REG_` | Brain region | Anatomically defined structure: location, cytoarchitecture, connectivity |
+| `CEL_` | Cell type | Neuronal or glial population defined by morphological, molecular, or functional properties; may span regions |
+| `NET_` | Neural circuit / network | Structured connectivity pattern between regions or cell types, at a defined spatial scale |
+| `PAR_` | Experimental paradigm | Behavioral task or protocol: what the subject experiences and does; no equipment or analysis details |
+| `TECH_` | Technical method | Procedure for acquiring, preprocessing, or stimulating neural/behavioral signals |
+| `ANA_` | Analysis method | Post-hoc data analysis procedure: statistics, dimensionality reduction, decoding, inference |
+| `DAT_` | Canonical dataset | Curated, publicly accessible data collection serving as a community reference |
 
 Slug convention: lowercase, hyphenated, descriptive.
-Examples: `PHE_place-cell-remapping`, `MOD_ring-attractor`, `REG_v1-layer4`, `PAR_morris-water-maze`
+Examples: `PHE_place-cell-remapping`, `MOD_ring-attractor`, `REG_v1`, `CEL_pv-interneuron`, `NET_basal-ganglia-thalamic-loop`, `PAR_morris-water-maze`, `TECH_two-photon-imaging`, `ANA_population-decoding`, `DAT_allen-brain-atlas`
 
 Full page templates, `wiki/index.md` structure, conflict resolution rules, and citation integrity rules: see `agent/TEMPLATES.md`.
 
@@ -103,9 +107,9 @@ note = {reconstructed from @SourceKey}
 
 ## Confidence Levels and Theory Status
 
-### Confidence (PHE_, MOD_, REG_ pages)
+### Confidence (PHE_, MOD_, REG_, CEL_, NET_, TECH_, ANA_ pages)
 
-Every `PHE_`, `MOD_`, and `REG_` page must carry a confidence field. Default to `speculative` when evidence is thin.
+Every `PHE_`, `MOD_`, `REG_`, `CEL_`, `NET_`, `TECH_`, and `ANA_` page must carry a confidence field. Default to `speculative` when evidence is thin.
 
 | Level | Meaning |
 |-------|---------|
@@ -115,14 +119,15 @@ Every `PHE_`, `MOD_`, and `REG_` page must carry a confidence field. Default to 
 
 Confidence upgrades and downgrades both require a note in the page's **Controversies** section citing the evidence that motivated the change.
 
-> **Note**: `speculative` reflects thin evidence, not design purpose. A MOD_ page with `explanatory_role: how-possibly` is not speculative by default — how-possibly models are legitimate epistemic stages regardless of evidence quality. Distinguish evidence quality (confidence field) from explanatory status (`explanatory_role` field and **Explanatory Scope** section).
+> **Note**: `speculative` reflects thin evidence, not design purpose. A MOD_ page with `exploratory: true` is not speculative by default — exploratory models are legitimate epistemic stages regardless of evidence quality. Distinguish evidence quality (confidence field) from explanatory status (`explanatory_character`, `marr_level`, and **Explanatory Scope** section).
 
 ### Status (THE_ pages)
 
-`THE_` pages do not carry a confidence or quality rating. Instead they carry a neutral **Status** field describing the theory's current standing in the field.
+`THE_` pages do not carry a confidence field. Instead they carry a neutral **Status** field.
 
 | Status | Meaning |
 |--------|---------|
+| `emerging` | Has an explanatory schema and initial formal models but the model family is not yet mature |
 | `active-research-area` | The theory is actively developed, debated, and applied in current research |
 | `settled` | The theory is broadly accepted; major disputes resolved; still used but no longer a frontier |
 | `abandoned` | The theory has been superseded or discredited and is no longer actively pursued |
@@ -135,14 +140,14 @@ Confidence upgrades and downgrades both require a note in the page's **Controver
 2. Never fabricate citations. Unresolvable secondary references: `<!-- UNRESOLVED: <description> -->`.
 3. The `†` dagger is mandatory on every secondary citation.
 4. Equations before prose on all MOD_ pages.
-5. PHE_ and REG_ pages describe observations. MOD_ pages describe proposals. Never conflate.
-6. Confidence is mandatory on every PHE_, MOD_, and REG_ page.
+5. PHE_, REG_, CEL_, and NET_ pages describe observations. MOD_ pages describe proposals. THE_ pages describe theories and their explanatory architecture. Never conflate.
+6. Confidence is mandatory on every PHE_, MOD_, REG_, CEL_, NET_, TECH_, and ANA_ page.
 7. Cross-link using `[[TYPE_slug]]` within page bodies. Use relative paths in `index.md`.
 8. Flag uncertainty with `> ⚠️ Uncertain: <reason>`.
 9. Rewrite, don't append. Git history is the changelog.
 10. Promotions are content reviews, not find-and-replace. Re-evaluate every claim previously citing the secondary source against the actual PDF.
 11. End every session by appending a log entry to `wiki/log.md` using the format in the **Session Log** section below, then printing the entry to the conversation. The final line of every entry must be `**Sign-off**: *(pending)*` — the human replaces this with `**Sign-off**: ✓ Verified — <name>, <date>` after completing the checklist in `docs/VERIFICATION.md`.
-12. Every MOD_ page must populate `explanatory_role` in the frontmatter and the **Explanatory Scope** section in the body. State the level-relative explanatory status explicitly — phenomenological at one level and mechanistic at another are not contradictory and both must appear.
+12. Every MOD_ page must populate `explanatory_character`, `marr_level`, `construction`, and `exploratory` in the frontmatter, and the **Explanatory Scope** section in the body. State level-relativity explicitly — phenomenological at one level and mechanistic at another are not contradictory and both must appear. If `marr_level` includes `computational` and the model makes a normative claim, state the objective or optimality principle in the Explanatory Scope section.
 
 ---
 

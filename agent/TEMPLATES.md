@@ -12,7 +12,7 @@ The frontmatter `type` field is the only strictly required field; all others are
 
 ---
 
-### 1.1 PHE_ — Phenomenon / Empirical Finding
+### 1.1 PHE_ — Phenomenon
 
 ```markdown
 ---
@@ -22,7 +22,7 @@ confidence: established | debated | speculative
 updated: YYYY-MM-DD
 related:
   - REG_<slug>
-  - PAR_<slug>
+  - CEL_<slug>
   - MOD_<slug>
 tags: []
 ---
@@ -31,7 +31,9 @@ tags: []
 
 ## Description
 
-<What is the phenomenon? Define it precisely, including conditions of observation.>
+<What is the phenomenon? Define it precisely, including conditions of observation.
+Covers neural and behavioral regularities at any level — firing patterns, oscillations,
+psychophysical effects, learning phenomena, and functional network patterns (e.g. DMN).>
 
 ## Empirical Basis
 
@@ -55,26 +57,56 @@ All confidence changes explained here with citations.>
 
 ## Modeling Implications
 
-<What must any model engaging with this phenomenon produce or respect?
-Link to [[MOD_...]] pages.>
+<What must any model or theory engaging with this phenomenon produce or respect?
+Link to [[MOD_...]] and [[THE_...]] pages.>
 ```
 
 ---
 
-### 1.2 MOD_ — Model
+### 1.2 MOD_ — Computational Model
+
+> **MOD_ vs ANA_ boundary**: if the model makes claims about neural computation, representation,
+> or mechanism — even implicitly — it belongs in MOD_. Models used purely as measurement or
+> summarization tools without mechanistic interpretation belong in ANA_.
+
+> **Classification guide**
+>
+> `marr_level` — choose all that apply:
+> - `computational`: characterizes *what problem* the system solves and *why*. May involve a
+>   normative claim (optimal, rational, efficient) but need not — a purely descriptive
+>   information-processing account also sits here.
+> - `algorithmic`: specifies the representations and processes that implement the solution;
+>   abstracts over biophysical details. Example: attractor dynamics, update rules, Kalman filter.
+> - `implementational`: maps onto specific biological hardware — neurons, ion channels, synapses,
+>   anatomical pathways. Example: Hodgkin-Huxley, conductance-based networks.
+>
+> `explanatory_character`:
+> - `phenomenological`: model variables fit input-output regularities without corresponding to
+>   identifiable biological components. Could be replaced by any equivalent function with equal
+>   validity as a description of the target.
+> - `mechanistic`: satisfies the 3M criterion (Kaplan & Craver 2011): (a) model variables
+>   correspond to components, activities, properties, or organizational features of the target
+>   mechanism; AND (b) dependencies among variables correspond to causal relations among those
+>   components. Diagnostic question: does removing a variable lose a structural claim about the
+>   mechanism, or only fit quality?
 
 ```markdown
 ---
 type: model
 title: <full human-readable name>
-subtype: mechanistic | normative | data-driven | behavioral
-explanatory_role: how-possibly | how-actually | phenomenological
+explanatory_character: phenomenological | mechanistic
+marr_level:           # list; computational level may carry a normative claim
+  - computational
+  - algorithmic
+  - implementational
+construction: theory-derived | data-driven | hybrid
+exploratory: true | false
 confidence: established | debated | speculative
 updated: YYYY-MM-DD
 related:
   - PHE_<slug>
-  - REG_<slug>
-  - PAR_<slug>
+  - NET_<slug>
+  - THE_<slug>
 tags: []
 ---
 
@@ -83,18 +115,30 @@ tags: []
 ## Description
 
 <What is this model? What problem was it designed to solve?
-What idealization strategy does it use: Galilean (distortions intended for progressive de-idealization), minimalist (incompleteness is the point), or multiple-models (one of several incompatible models pursuing different representational ideals)?>
+If exploratory (exploratory: true), state what class of mechanisms it demonstrates are in
+principle sufficient — and why this constrains theorizing about the target phenomenon.
+If the model involves idealization choices worth noting (e.g. deliberate distortions intended
+for progressive refinement, or intentional incompleteness), describe them here or in Core
+Assumptions — not in Explanatory Scope.>
 
 ## Descriptive Target
 
 <What regularities does this model fit? What data or phenomena is it empirically adequate to?
-A phenomenon showing a different pattern falsifies the model with respect to its descriptive target.>
+A phenomenon showing a different pattern falsifies the model with respect to its descriptive target.
+If exploratory: true, state what the model demonstrates is possible rather than what it fits.>
 
 ## Explanatory Scope
 
-<At what level of organization does this model have genuine mechanistic or constitutive grounding?
-If phenomenological at one level, state which — and state whether it is mechanistic at another level.
-Level-relativity is mandatory: a model may be phenomenological at one level and mechanistic at another; both must be stated explicitly.>
+<State what level(s) of organization this model operates at (from marr_level) and what kind
+of explanatory claim it makes (from explanatory_character).
+If explanatory_character: mechanistic, state which components, activities, properties, or
+organizational features of the target mechanism the model's variables correspond to, and which
+causal relations among those components the model's dependencies capture (3M criterion:
+Kaplan & Craver 2011).
+If marr_level includes computational and the model makes a normative claim, state the objective
+or optimality principle being invoked.
+Level-relativity is mandatory: a model may be phenomenological at one level and mechanistic
+at another; both must be stated explicitly.>
 
 ## Formal Description
 
@@ -132,16 +176,21 @@ Always present equations before prose interpretation.>
 
 ### 1.3 THE_ — Neuroscientific Theory
 
+> **Umbrella theories**: when a theory subsumes other theories as sub-cases (e.g. the Bayesian
+> brain hypothesis encompassing predictive coding, efficient coding, and optimal control),
+> represent it as a THE_ page with links to sub-theory THE_ pages in the **Model Family**
+> section and in `related`. The relationship is theoretical architecture, not a type distinction.
+
 ```markdown
 ---
 type: theory
 title: <full human-readable name>
-status: active-research-area | settled | abandoned
+status: emerging | active-research-area | settled | abandoned
 updated: YYYY-MM-DD
 related:
   - PHE_<slug>
   - MOD_<slug>
-  - REG_<slug>
+  - THE_<slug>
 tags: []
 ---
 
@@ -162,6 +211,9 @@ tags: []
 ## Model Family
 
 <What formal models instantiate this theory? What do they share structurally?
+For umbrella theories: list sub-theories and what they contribute; link to [[THE_...]] pages.
+For emerging theories: describe the model family as it currently exists, noting where it is
+incomplete or contested.
 Link to relevant [[MOD_...]] pages.>
 
 ## Mechanistic Grounding
@@ -172,7 +224,7 @@ What mechanisms does it invoke, and which does it leave unspecified or treat as 
 ## Empirical Scope
 
 <What phenomena is this theory designed to explain?
-What is explicitly outside its scope or left for other frameworks?
+What is explicitly outside its scope or left for other theories?
 Link to relevant [[PHE_...]] pages.>
 
 ## Controversies
@@ -186,7 +238,7 @@ Link to relevant [[PHE_...]] pages.>
 
 ---
 
-### 1.4 REG_ — Brain Region or Cell Type
+### 1.4 REG_ — Brain Region
 
 ```markdown
 ---
@@ -195,44 +247,151 @@ title: <full human-readable name>
 confidence: established | debated | speculative
 updated: YYYY-MM-DD
 related:
+  - CEL_<slug>
+  - NET_<slug>
   - PHE_<slug>
-  - MOD_<slug>
-  - PAR_<slug>
 tags: []
 ---
 
-# <Region or cell type name>
+# <Region name>
 
 ## Anatomical Identity
 
-<Location, laminar structure, major subregions or subtypes. (@Key)>
-
-## Physiology
-
-<Firing rates, spiking patterns, intrinsic currents. All values cited. (@Key)>
+<Location, boundaries, major subdivisions, cytoarchitectonic characteristics. (@Key)>
 
 ## Connectivity
 
 <Major inputs and outputs. Feedforward/feedback/lateral distinction.
-Laminar, cell-type, and synaptic specificity where known. (@Key)>
+Laminar and cell-type specificity where known. (@Key)>
 
 ## Functional Role(s)
 
-<What computations or behaviors is this region/cell type implicated in? (@Key)>
+<What computations or behaviors is this region implicated in? (@Key)>
+
+## Principal Cell Types
+
+<Dominant neuronal populations. Link to [[CEL_...]] pages.>
 
 ## Controversies
 
-<Disputed claims about anatomy, physiology, or function.>
+<Disputed claims about anatomy, connectivity, or functional role.>
 
 ## Modeling Considerations
 
 <What properties must a model of this region capture?
-What simplifications are common and when do they fail? Link to [[MOD_...]] pages.>
+What simplifications are common and when do they fail?
+Link to [[MOD_...]] and [[NET_...]] pages.>
 ```
 
 ---
 
-### 1.5 PAR_ — Experimental Paradigm or Dataset
+### 1.5 CEL_ — Cell Type
+
+```markdown
+---
+type: cell_type
+title: <full human-readable name>
+confidence: established | debated | speculative
+updated: YYYY-MM-DD
+related:
+  - REG_<slug>
+  - PHE_<slug>
+  - NET_<slug>
+tags: []
+---
+
+# <Cell type name>
+
+## Identity
+
+<Defining properties: morphology, molecular markers, intrinsic membrane properties.
+For functionally-defined types (place cells, grid cells), state both the functional
+criterion and any known molecular or morphological correlates. (@Key)>
+
+## Distribution
+
+<Which regions contain this cell type. Layer specificity and prevalence where known. (@Key)>
+
+## Physiology
+
+<Firing patterns, intrinsic currents, membrane time constants, adaptation properties.
+All quantitative values cited. (@Key)>
+
+## Connectivity
+
+<Synaptic targets and sources. Cell-type and compartment (soma/dendrite/axon) specificity. (@Key)>
+
+## Functional Role(s)
+
+<What computations or behaviors is this cell type implicated in? (@Key)>
+
+## Controversies
+
+<Disputed claims about classification, physiology, or function.
+Note where molecularly-defined and functionally-defined boundaries diverge.>
+
+## Modeling Considerations
+
+<What properties must a model representing this cell type capture?
+What simplifications are common and when do they fail?
+Link to [[MOD_...]] pages.>
+```
+
+---
+
+### 1.6 NET_ — Neural Circuit / Network
+
+```markdown
+---
+type: circuit
+title: <full human-readable name>
+scale: local | mesoscale | large-scale
+confidence: established | debated | speculative
+updated: YYYY-MM-DD
+related:
+  - REG_<slug>
+  - CEL_<slug>
+  - PHE_<slug>
+tags: []
+---
+
+# <Circuit / network name>
+
+## Description
+
+<What circuit or network is this? What system does it belong to?
+State the spatial scale: local microcircuit (<1 mm), mesoscale (within a system),
+or large-scale (between brain regions).>
+
+## Components
+
+<Key nodes — regions and cell types — and their roles within the circuit.
+Link to [[REG_...]] and [[CEL_...]] pages.>
+
+## Connectivity Architecture
+
+<Known connection patterns, directionality, synaptic properties, and laminar specificity.
+Distinguish established from inferred connections. All claims cited. (@Key)>
+
+## Functional Organization
+
+<How is computation organized across this circuit?
+What is the role of each component in the circuit's overall function? (@Key)>
+
+## Controversies
+
+<Disputed claims about connectivity or functional organization.>
+
+## Modeling Considerations
+
+<What structural or functional properties must a model of this circuit respect?
+What abstractions are common and when do they break down?
+Link to [[MOD_...]] pages.>
+```
+
+---
+
+### 1.7 PAR_ — Experimental Paradigm
 
 ```markdown
 ---
@@ -241,33 +400,36 @@ title: <full human-readable name>
 updated: YYYY-MM-DD
 related:
   - PHE_<slug>
-  - REG_<slug>
-  - MOD_<slug>
+  - TECH_<slug>
+  - ANA_<slug>
 tags: []
 ---
 
-# <Paradigm or dataset name>
+# <Paradigm name>
 
 ## Description
 
-<What is this paradigm or dataset? What is the experimental logic or data structure?>
+<What is this paradigm? Describe the experimental logic: what the subject experiences,
+what conditions or contrasts are built into the protocol, and what behavioral responses
+are required or measured. No equipment or recording specifications here.>
 
 ## What It Measures / Reveals
 
-<What neural or behavioral variables does it give access to?
+<What behavioral or neural observables does this paradigm provide access to?
 What phenomena has it been used to characterize? (@Key)>
 
 ## Standard Variants
 
-<Common protocol variants and what they emphasize differently.>
+<Common protocol variants and what they emphasize or isolate differently.>
 
 ## Limitations and Confounds
 
-<Known confounds, what the paradigm cannot distinguish, species/state dependencies.>
+<What the paradigm cannot distinguish. Known demand characteristics, species dependencies,
+or boundary conditions on interpretation. (@Key)>
 
-## Key Studies and Datasets
+## Key Studies
 
-<Landmark papers or publicly available datasets. (@Key) or (@Key†)>
+<Landmark papers that established or canonically employed this paradigm. (@Key)>
 
 ## Relevance to This Project
 
@@ -276,32 +438,85 @@ What phenomena has it been used to characterize? (@Key)>
 
 ---
 
-### 1.6 MET_ — Analysis Method or Algorithm
+### 1.8 TECH_ — Technical Method
 
 ```markdown
 ---
-type: method
+type: technique
 title: <full human-readable name>
-subtype: analysis | preprocessing | decoding | statistical
+subtype: acquisition | preprocessing | stimulation
+confidence: established | debated | speculative
+updated: YYYY-MM-DD
+related:
+  - PAR_<slug>
+  - ANA_<slug>
+  - REG_<slug>
+tags: []
+---
+
+# <Technique name>
+
+## Description
+
+<What does this technique do? What signals does it produce (acquisition),
+transform (preprocessing), or deliver (stimulation)?
+State the biological target and the physical or computational principle of operation.>
+
+## Spatial and Temporal Resolution
+
+<Key performance characteristics with citations. Include trade-offs where relevant. (@Key)>
+
+## Key Assumptions and Limitations
+
+<What must be true of the preparation or signal for valid results?
+Known artifacts, failure modes, and conditions that invalidate the technique. (@Key)>
+
+## Species and Preparation Compatibility
+
+<Where this technique can and cannot be applied: species, in vivo/ex vivo/in vitro,
+anesthetized vs. awake, chronic vs. acute. (@Key)>
+
+## Standard Variants
+
+<Common implementations, configurations, or pipelines and what they emphasize differently.>
+
+## Software and Hardware
+
+<Key platforms, pipelines, equipment, or reference implementations.>
+
+## Controversies
+
+<Disputed claims about signal validity, interpretation, or species generalizability. (@Key)>
+```
+
+---
+
+### 1.9 ANA_ — Analysis Method
+
+```markdown
+---
+type: analysis
+title: <full human-readable name>
 confidence: established | debated | speculative
 updated: YYYY-MM-DD
 related:
   - PHE_<slug>
+  - TECH_<slug>
   - MOD_<slug>
-  - PAR_<slug>
 tags: []
 ---
 
-# <Method name>
+# <Analysis method name>
 
 ## Description
 
-<What does this method do? What input does it take and what output does it produce?>
+<What does this method do? What input does it take and what output does it produce?
+State the computational or statistical principle.>
 
 ## Key Assumptions
 
 <What must be true of the data for the method to be valid?
-What does it assume about the signal, noise, stationarity, or independence of observations?>
+Assumptions about signal structure, noise, stationarity, independence, or sample size. (@Key)>
 
 ## Known Artifacts and Limitations
 
@@ -310,7 +525,7 @@ Under what conditions does it fail or produce misleading results? (@Key)>
 
 ## Standard Variants
 
-<Common algorithmic or protocol variants and what they emphasize differently.>
+<Common algorithmic or implementation variants and what they emphasize or sacrifice.>
 
 ## Software Implementations
 
@@ -319,6 +534,53 @@ Under what conditions does it fail or produce misleading results? (@Key)>
 ## Usage in the Literature
 
 <How has this been applied in neuroscience? What has it been used to measure or reveal? (@Key)>
+```
+
+---
+
+### 1.10 DAT_ — Canonical Dataset
+
+```markdown
+---
+type: dataset
+title: <full human-readable name>
+updated: YYYY-MM-DD
+related:
+  - PAR_<slug>
+  - TECH_<slug>
+  - PHE_<slug>
+tags: []
+---
+
+# <Dataset name>
+
+## Description
+
+<What is this dataset? What neural or behavioral system does it cover?
+What motivated its creation or curation?> (@Key)
+
+## Recording Conditions
+
+<Species, preparation (in vivo / ex vivo), brain regions or behaviors covered,
+subject population and sample size. (@Key)>
+
+## Modality and Scale
+
+<Recording technique (link to [[TECH_...]]). Number of subjects, sessions, neurons,
+trials, or voxels as appropriate. Temporal and spatial resolution. (@Key)>
+
+## Data Structure and Access
+
+<File formats, repository location, versioning, and licensing.
+Any preprocessing applied to the released data.>
+
+## Key Publications
+
+<Papers that introduced, described, or canonically analyzed this dataset. (@Key)>
+
+## Relevance to This Project
+
+<How this resource is or could be used in the current project's context.>
 ```
 
 ---
@@ -339,13 +601,8 @@ updated: YYYY-MM-DD
 ## Phenomena
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
-| [PHE_place-cell-remapping](pages/PHE_place-cell-remapping.md) | Place cell remapping | established | 2025-03-10 |
 
-## Models
-| Page | Title | Confidence | Updated |
-|------|-------|------------|---------|
-
-## Methods & Analysis
+## Computational Models
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
@@ -353,11 +610,31 @@ updated: YYYY-MM-DD
 | Page | Title | Status | Updated |
 |------|-------|--------|---------|
 
-## Brain Regions & Cell Types
+## Brain Regions
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
-## Paradigms & Datasets
+## Cell Types
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Neural Circuits & Networks
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Experimental Paradigms
+| Page | Title | Updated |
+|------|-------|---------|
+
+## Technical Methods
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Analysis Methods
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Canonical Datasets
 | Page | Title | Updated |
 |------|-------|---------|
 ```

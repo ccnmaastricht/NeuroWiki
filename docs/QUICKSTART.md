@@ -49,14 +49,14 @@ Follow agent/REFINE_A.md exactly. Print the session summary when done.
 
 ### Refinement B — Depth audit
 ```
-Read agent/AGENT.md fully, then read agent/REFINE_B.md fully.
+Read agent/REFINE_B.md fully.
 Run the Depth Audit across all pages in wiki/pages/.
 Follow agent/REFINE_B.md exactly. Save the report and print the session summary when done.
 ```
 
 ### Refinement C — Cross-link audit
 ```
-Read agent/AGENT.md fully, then read agent/REFINE_C.md fully.
+Read agent/REFINE_C.md fully.
 Run the Cross-Link Audit across all pages in wiki/pages/ and wiki/index.md.
 Follow agent/REFINE_C.md exactly. Print the session summary when done.
 ```
@@ -74,7 +74,7 @@ Do not process any new PDFs.
 I need to evaluate our choice of [MODEL/METHOD].
 Critically evaluate the empirical support, core assumptions and biological basis,
 and how it compares to [ALTERNATIVE].
-Draw from MOD_, PHE_, THE_, and REG_ pages. Do not process any new PDFs.
+Draw from MOD_, THE_, PHE_, REG_, CEL_, and NET_ pages. Do not process any new PDFs.
 ```
 
 ### Wiki overview
