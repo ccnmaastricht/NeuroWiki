@@ -10,7 +10,11 @@ updated: YYYY-MM-DD
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
-## Models & Methods
+## Models
+| Page | Title | Confidence | Updated |
+|------|-------|------------|---------|
+
+## Methods & Analysis
 | Page | Title | Confidence | Updated |
 |------|-------|------------|---------|
 
