@@ -129,6 +129,16 @@ Create one copy of this template per project or research line.
 | When a new contributor joins | REFINE_A |
 | After REFINE_C identifies candidate pages | Next ingestion session |
 
+## Review Schedule
+
+REVIEW is flag-driven, not periodic. Run it when:
+
+| Trigger | Action |
+|---------|--------|
+| A session has ⚑ flags that need a decision | Run REVIEW — flags require human judgment and block sign-off |
+| UNCITED or UNRESOLVED flags are accumulating across sessions | Run REVIEW to clear the backlog before it grows unwieldy |
+| Before manuscript submission or a modeling decision | Run REVIEW to ensure all flags on relevant pages are resolved and sessions are signed off |
+
 ---
 
 ## After Every Session
