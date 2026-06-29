@@ -53,6 +53,17 @@ Report to the human: "Found N flag(s): [summary list]. Working through them now.
 
 ## Step R3 — Resolve ⚑ Flags (Synchronous)
 
+A Controversies entry has this structure:
+
+```markdown
+### <Conflict title>
+- **Position A**: <statement> (@Key1)
+- **Position B**: <statement> (@Key2)
+- **Possible resolution**: <if one exists>
+- **Status**: unresolved | partially resolved | resolved
+- **⚑ Human review requested**: <reason>
+```
+
 For each ⚑ flag, one at a time:
 
 **Present:**
@@ -73,8 +84,8 @@ How would you like to resolve this?
 
 | Response | Action |
 |----------|--------|
-| A or B | Update the Controversies entry: set `Status: resolved`, record which position was accepted and why (use the human's words). Remove `> ⚑ **Human review required**: ...` from the page header. If the resolution changes confidence, update the frontmatter field and add a note in Controversies. |
-| C | Update the Controversies entry with the human's note and the partial resolution. Set `Status: partially resolved`. Remove the page header flag. |
+| A or B | Update the Controversies entry: set `Status: resolved`, record which position was accepted and why (use the human's words). Remove the `**⚑ Human review requested**` line from the entry and the `> ⚑ **Human review required**: ...` banner from the page header. If the resolution changes confidence, update the frontmatter field. |
+| C | Update the Controversies entry with the human's note. Set `Status: partially resolved`. Remove the `**⚑ Human review requested**` line from the entry and the banner from the page header. |
 | D | Leave the page unchanged. Record this flag as still open. |
 
 After applying, confirm: "Done — [describe change made, or 'flag left open']. Moving to next item."
@@ -127,30 +138,42 @@ No page changes are made here regardless of response. Record the human's decisio
 
 ## Step R6 — Write Session Log Entry and Sign Off
 
-**Write the review session log entry** — append to `wiki/log.md` (newest first) using the canonical format from AGENT.md Section 11:
+**Append the review session log entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first):**
 
-For the **Changes** section, include:
+```markdown
+## Session YYYY-MM-DD — Review: YYYY-MM-DD
 
-```
+**Run by**: <name>
+
+### Changes
+
 - Target session: <original session date and type>
 - ⚑ flags: N resolved of M total
 - UNCITED flags: N resolved of M total
 - UNRESOLVED flags: N noted of M total
-```
 
-Under **Flags resolved this session**, list each item that was resolved with a one-line description of the resolution.
+### Flags raised
+- ⚑ Human review: none
+- `<!-- UNCITED -->`: none
+- `<!-- UNRESOLVED -->`: none
 
-Under **Action items**, list any UNRESOLVED flags the human decided to address in the next ingestion session.
+### Flags resolved this session
+- <one line per resolved item describing the resolution, or "none">
 
-If any flags remain open, add a **Flags remaining open** subsection (between **Flags resolved** and **Action items**) listing each unresolved item and why it was left open.
+### Flags remaining open *(omit section if none)*
+- <item — reason left open>
 
-The review session log entry is signed immediately — the human is present:
+### Action items
+- <UNRESOLVED items the human chose to address in the next ingestion session, or "none">
 
-```
 **Sign-off**: ✓ Verified — <name>, <date>
 ```
 
-**Sign off the original session** if and only if all flags from that session are now resolved (either resolved this session or were previously resolved). Edit the original log entry in `wiki/log.md`:
+The review session entry is signed immediately — the human is present. Do not write `*(pending)*`.
+
+**Print the completed entry to the conversation.**
+
+**Sign off the original session** if and only if all flags from that session are now resolved. Edit the original log entry in `wiki/log.md`:
 
 ```
 **Sign-off**: ✓ Verified — <name>, <date>

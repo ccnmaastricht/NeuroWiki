@@ -18,7 +18,7 @@ Gaps identified here are filled by ingesting more PDFs — not by writing from a
 
 ## Step B1 — Derive Project-Specific Questions
 
-Read Section 1 of AGENT.md. From the research question, model types, brain regions, and key phenomena listed there, derive 3–5 concrete questions per category below that are specific to this project. Generate these fresh — do not reuse examples from this file. Record the derived questions at the top of the audit report (Step B3) so future readers know what standard was applied.
+From the Project Identity section of your bootstrap file, read the research question, model types, brain regions, and key phenomena. Derive 3–5 concrete questions per category below that are specific to this project. Generate these fresh — do not reuse examples from this file. Record the derived questions at the top of the audit report (Step B3) so future readers know what standard was applied.
 
 ### The four depth categories
 
@@ -105,15 +105,34 @@ This directly guides which PDFs to add in the next ingestion sessions.>
 
 ## Step B4 — Write Session Log Entry
 
-Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+Append a new entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first):
 
-For the **Changes** section, include:
+```markdown
+## Session YYYY-MM-DD — Depth Audit
 
-```
+**Run by**: <name or "agent">
+
+### Changes
+
 - Pages audited: N
 - No gaps: N | Minor gaps: N | Major gaps: N
 - Audit report: wiki/depth-audit-YYYY-MM-DD.md
 - Top PDF acquisition priorities: <1. topic — for pages; 2. topic — for pages; 3. topic — for pages>
+
+### Flags raised
+- ⚑ Human review: none
+- `<!-- UNCITED -->`: none
+- `<!-- UNRESOLVED -->`: none
+
+### Flags resolved this session
+- none
+
+### Action items
+- <list, or "none">
+
+**Sign-off**: *(pending)*
 ```
 
-Note: REFINE_B writes no wiki pages. Leave **Flags raised** and **Flags resolved** as "none" unless citation issues were discovered while reading.
+Note: REFINE_B writes no wiki pages. Flags raised and resolved are "none" unless citation issues were discovered while reading.
+
+Print the completed entry to the conversation.

@@ -46,6 +46,15 @@ To verify: open the source PDF, confirm the claim accurately represents the sour
 
 ### 4. Resolve flags
 
+Use the agent-assisted **Review workflow** (`agent/REVIEW.md`) to work through flags systematically — it presents each item one at a time and applies resolutions immediately. Run it with:
+
+```
+Read agent/REVIEW.md fully.
+Run a Review Session. Follow agent/REVIEW.md exactly.
+```
+
+Alternatively, resolve flags manually:
+
 **`⚑ Human review required`** (PI):
 - Read both cited positions
 - If resolvable: update Controversies entry, set status, remove flag from page header
@@ -133,7 +142,7 @@ Remove only after PI sign-off on a corrected, re-verified version.
 
 ## Session Log Format
 
-The canonical log entry format is defined in **AGENT.md Section 11**. Every session produces one entry in `wiki/log.md`, newest first.
+The canonical log entry format is defined in the **Session Log** section of your agent's bootstrap file. Every session produces one entry in `wiki/log.md`, newest first.
 
 When spot-checking, add your findings directly into the relevant session entry under a `### Spot-check results` subsection before signing off:
 

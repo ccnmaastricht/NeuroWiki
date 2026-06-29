@@ -63,7 +63,7 @@ Add a complete BibTeX entry to `wiki/primary.bib`, all fields verified against t
 
 ## Step 4 — Update secondary.bib
 
-For each paper cited within the PDF that is relevant to this project (per Section 1 of AGENT.md) and not already in `raw/`, add an entry to `secondary.bib` if not already present:
+For each paper cited within the PDF that is relevant to this project (per the Project Identity section of your bootstrap file) and not already in `raw/`, add an entry to `secondary.bib` if not already present:
 
 ```
 note = {reconstructed from @CitationKey}
@@ -101,15 +101,34 @@ Update the `updated` field in the frontmatter.
 
 ## Step 7 — Write Session Log Entry
 
-Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+Append a new entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first):
 
-For the **Changes** section, include:
+```markdown
+## Session YYYY-MM-DD — Ingestion: <filename.pdf>
 
-```
+**Run by**: <name or "agent">
+
+### Changes
+
 - Pages created: <list or "none">
 - Pages modified: <list or "none">
 - Confidence changes: <page: old → new — justification, or "none">
 - Secondary entries added: <N entries, or "none">
 - Promotion: <yes — @Key / no>
 - Promotion cleanup: <confirmed clean / unresolved instances listed, or "N/A">
+
+### Flags raised
+- ⚑ Human review: <page — issue, or "none">
+- `<!-- UNCITED -->`: <page — claim summary, or "none">
+- `<!-- UNRESOLVED -->`: <description, or "none">
+
+### Flags resolved this session
+- <list, or "none">
+
+### Action items
+- <list, or "none">
+
+**Sign-off**: *(pending)*
 ```
+
+Print the completed entry to the conversation.

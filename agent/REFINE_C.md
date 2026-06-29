@@ -65,11 +65,15 @@ Otherwise link the slug and leave the term as-is in the surrounding prose.
 
 ## Step C4 — Write Session Log Entry
 
-Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+Append a new entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first):
 
-For the **Changes** section, include:
+```markdown
+## Session YYYY-MM-DD — Cross-Link Audit
 
-```
+**Run by**: <name or "agent">
+
+### Changes
+
 - Pages audited: N
 - Pages modified: N
 - Links added: N total (<page: +N, ...>)
@@ -78,6 +82,19 @@ For the **Changes** section, include:
 - index.md entries added: <list or "none">
 - Broken paths fixed: <list or "none">
 - Concepts with no existing page: <"concept" — mentioned on pages, or "none">
+
+### Flags raised
+- ⚑ Human review: none
+- `<!-- UNCITED -->`: none
+- `<!-- UNRESOLVED -->`: none
+
+### Flags resolved this session
+- none
+
+### Action items
+- <concepts with no existing page that warrant new pages, or "none">
+
+**Sign-off**: *(pending)*
 ```
 
-List any concepts with no existing page under **Action items** as candidates for future pages.
+Print the completed entry to the conversation.

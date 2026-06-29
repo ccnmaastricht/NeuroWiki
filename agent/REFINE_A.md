@@ -80,11 +80,15 @@ For every file in `wiki/pages/` and `wiki/index.md`:
 
 ## Step A4 — Write Session Log Entry
 
-Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+Append a new entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first):
 
-For the **Changes** section, include:
+```markdown
+## Session YYYY-MM-DD — Structural Harmonization
 
-```
+**Run by**: <name or "agent">
+
+### Changes
+
 - Pages audited: N
 - Pages with no issues: N
 - Pages repaired: N
@@ -93,6 +97,20 @@ For the **Changes** section, include:
 - Section reordering: <page, or "none">
 - Heading renames: <page: old → new, or "none">
 - Notation corrections: N instances across M pages (or "none")
+
+### Flags raised
+- ⚑ Human review: <page — issue, or "none">
+- `<!-- UNCITED -->`: <page — claim summary, or "none">
+- `<!-- UNRESOLVED -->`: <description, or "none">
+
+### Flags resolved this session
+- <list, or "none">
+
+### Action items
+- <list any `<!-- MISSING -->` stubs added, so the human knows what needs populating in
+  the next ingestion session, or "none">
+
+**Sign-off**: *(pending)*
 ```
 
-List any `<!-- MISSING -->` stubs added under **Action items** so the human knows what needs populating in the next ingestion session.
+Print the completed entry to the conversation.
