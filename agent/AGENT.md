@@ -562,5 +562,38 @@ List all such flags in the session summary.
 9. Flag uncertainty with `> ⚠️ Uncertain: <reason>`.
 10. Rewrite, don't append. Git history is the changelog.
 11. Promotions are content reviews, not find-and-replace. Re-evaluate every claim previously citing the secondary source against the actual PDF.
-12. End every session with a structured summary covering: files modified, flags raised, conflicts found, citation integrity issues. The final line of every session summary must be `**Sign-off**: *(pending)*` — the human replaces this with `**Sign-off**: ✓ Verified — <name>, <date>` after completing the verification checklist.
+12. End every session by appending a log entry to `wiki/log.md` using the format in Section 11, then printing the entry to the conversation. The final line of every entry must be `**Sign-off**: *(pending)*` — the human replaces this with `**Sign-off**: ✓ Verified — <name>, <date>` after completing the checklist in `docs/VERIFICATION.md`.
 13. Every MOD_ page must populate `explanatory_role` in the frontmatter and the **Explanatory Scope** section in the body. State the level-relative explanatory status explicitly — phenomenological at one level and mechanistic at another are not contradictory and both must appear.
+
+---
+
+## 11. Session Log
+
+Every session ends by appending a new entry to `wiki/log.md`, directly after the opening `---` separator (newest entry first). Print the entry to the conversation as well.
+
+Each workflow file specifies what goes in the **Changes** section; everything else is standard across all session types.
+
+```markdown
+## Session YYYY-MM-DD — <Ingestion: filename.pdf | Structural Harmonization | Depth Audit | Cross-Link Audit>
+
+**Run by**: <name or "agent">
+
+### Changes
+
+<session-specific content — see workflow file for exact fields>
+
+### Flags raised
+- ⚑ Human review: <page — issue, or "none">
+- `<!-- UNCITED -->`: <page — claim summary, or "none">
+- `<!-- UNRESOLVED -->`: <description, or "none">
+
+### Flags resolved this session
+- <list, or "none">
+
+### Action items
+- <list, or "none">
+
+**Sign-off**: *(pending)*
+```
+
+The human replaces `*(pending)*` with `✓ Verified — <name>, <date>` after completing the post-session checklist in `docs/VERIFICATION.md`. The CI validator rejects lab wiki submissions that contain any `*(pending)*` entry.

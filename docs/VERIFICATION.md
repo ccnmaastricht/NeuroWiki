@@ -133,35 +133,11 @@ Remove only after PI sign-off on a corrected, re-verified version.
 
 ## Session Log Format
 
-Every session gets one entry in `wiki/log.md`:
+The canonical log entry format is defined in **AGENT.md Section 11**. Every session produces one entry in `wiki/log.md`, newest first.
 
-```markdown
-## Session YYYY-MM-DD — <PDF filename or Refinement REFINE_A/B/C>
+When spot-checking, add your findings directly into the relevant session entry under a `### Spot-check results` subsection before signing off:
 
-**Run by**: 
-**Verified by**: 
-**Verification date**: 
-
-### Changes
-- Pages created: 
-- Pages modified: 
-- Confidence changes: <page: old → new — justification>
-- Secondary entries added: 
-- Promotion: <yes — @Key / no>
-
-### Flags raised
-- ⚑ Human review: <page — issue>
-- UNCITED: <page — claim>
-- UNRESOLVED: <description>
-
-### Flags resolved this session
-- 
-
+```
 ### Spot-check results
 - <page>, "<claim>": verified ✓ / corrected: <correction>
-
-### Action items
-- 
-
-**Sign-off**: *(pending)*
 ```

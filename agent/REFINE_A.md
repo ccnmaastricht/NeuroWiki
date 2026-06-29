@@ -76,23 +76,21 @@ For every file in `wiki/pages/` and `wiki/index.md`:
 
 ---
 
-## Step A4 — Session Summary
+## Step A4 — Write Session Log Entry
+
+Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+
+For the **Changes** section, include:
 
 ```
-## Structural Harmonization — YYYY-MM-DD
-
-Pages audited: N
-Pages with no issues: N
-Pages repaired: N
-
-Issues found and fixed:
-- Missing frontmatter fields: <page: field>
-- Missing sections (stubs added): <page: section>
-- Section reordering: <page>
-- Heading renames: <page: old → new>
-- Citation notation corrected: N instances across M pages
-- Link notation corrected: N instances across M pages
-
-<!-- MISSING --> stubs requiring human attention:
-- <page>: <field or section>
+- Pages audited: N
+- Pages with no issues: N
+- Pages repaired: N
+- Missing frontmatter fields added: <page: field, or "none">
+- Missing sections stubbed: <page: section, or "none">
+- Section reordering: <page, or "none">
+- Heading renames: <page: old → new, or "none">
+- Notation corrections: N instances across M pages (or "none")
 ```
+
+List any `<!-- MISSING -->` stubs added under **Action items** so the human knows what needs populating in the next ingestion session.

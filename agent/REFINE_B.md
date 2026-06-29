@@ -103,18 +103,17 @@ This directly guides which PDFs to add in the next ingestion sessions.>
 
 ---
 
-## Step B4 — Session Summary
+## Step B4 — Write Session Log Entry
+
+Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+
+For the **Changes** section, include:
 
 ```
-## Depth Audit — YYYY-MM-DD
-
-Pages audited: N
-No gaps: N  |  Minor gaps: N  |  Major gaps: N
-
-Report saved to: wiki/depth-audit-YYYY-MM-DD.md
-
-Top PDF acquisition priorities:
-1. 
-2. 
-3. 
+- Pages audited: N
+- No gaps: N | Minor gaps: N | Major gaps: N
+- Audit report: wiki/depth-audit-YYYY-MM-DD.md
+- Top PDF acquisition priorities: <1. topic — for pages; 2. topic — for pages; 3. topic — for pages>
 ```
+
+Note: REFINE_B writes no wiki pages. Leave **Flags raised** and **Flags resolved** as "none" unless citation issues were discovered while reading.

@@ -99,28 +99,17 @@ Update the `updated` field in the frontmatter.
 
 ---
 
-## Step 7 — Session Summary
+## Step 7 — Write Session Log Entry
+
+Append a new entry to `wiki/log.md` (after the opening `---`, newest first) using the canonical format from AGENT.md Section 11. Print the entry to the conversation.
+
+For the **Changes** section, include:
 
 ```
-## Ingestion Session — <filename> — YYYY-MM-DD
-
-PDF processed: <filename>
-Promotion: yes (@Key) / no
-
-Pages created: 
-Pages modified: 
-Secondary entries added: 
-Promotion cleanup: confirmed clean / unresolved: 
-
-Confidence changes:
-- <page>: <old> → <new> — <justification>
-
-Conflicts requiring human review (⚑):
-- <page>: <issue>
-
-Citation integrity flags added:
-- <page>: <claim>
-
-Unresolved citations:
-- <description>
+- Pages created: <list or "none">
+- Pages modified: <list or "none">
+- Confidence changes: <page: old → new — justification, or "none">
+- Secondary entries added: <N entries, or "none">
+- Promotion: <yes — @Key / no>
+- Promotion cleanup: <confirmed clean / unresolved instances listed, or "N/A">
 ```
